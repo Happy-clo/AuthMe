@@ -1,55 +1,54 @@
-
-# This configuration file allows you to execute commands on various events.
-# Supported placeholders in commands:
-#   %p is replaced with the player name.
-#   %nick is replaced with the player's nick name
-#   %ip is replaced with the player's IP address
-#   %country is replaced with the player's country
+# 此配置文件允许您在各种事件上执行命令。
+# 支持在命令中使用的占位符：
+#   %p 将被玩家名称替换。
+#   %nick 将被玩家昵称替换
+#   %ip 将被玩家IP地址替换
+#   %country 将被玩家所在国家替换
 # 
-# For example, if you want to send a welcome message to a player who just registered:
+# 例如，如果您想要向刚刚注册的玩家发送欢迎消息：
 # onRegister:
 #   welcome:
-#     command: 'msg %p Welcome to the server!'
+#     command: 'msg %p 欢迎来到服务器！'
 #     executor: CONSOLE
 # 
-# This will make the console execute the msg command to the player.
-# Each command under an event has a name you can choose freely (e.g. 'welcome' as above),
-# after which a mandatory 'command' field defines the command to run,
-# and 'executor' defines who will run the command (either PLAYER or CONSOLE). Longer example:
+# 这将使控制台执行msg命令来向玩家发送消息。
+# 每个事件下的命令都有一个您可以自由选择的名称（例如上面的'welcome'），
+# 其后是一个必填的 'command' 字段，定义要运行的命令，
+# 而 'executor' 定义谁将运行命令（可以是 PLAYER 或 CONSOLE）。更详细的示例：
 # onLogin:
 #   welcome:
-#     command: 'msg %p Welcome back!'
+#     command: 'msg %p 欢迎回来！'
 #     executor: PLAYER
 #   broadcast:
-#     command: 'broadcast %p has joined, welcome back!'
+#     command: 'broadcast %p 已加入，欢迎回来！'
 #     executor: CONSOLE
 # 
-# You can also add delay to command. It will run after the specified ticks. Example:
+# 您还可以为命令添加延迟。它将在指定的 ticks 之后运行。示例：
 # onLogin:
 #   rules:
 #     command: 'rules'
 #     executor: PLAYER
 #     delay: 200
 # 
-# Supported command events: onLogin, onSessionLogin, onFirstLogin, onJoin, onLogout, onRegister, onUnregister
+# 支持的命令事件：onLogin、onSessionLogin、onFirstLogin、onJoin、onLogout、onRegister、onUnregister
 # 
-# For onLogin and onFirstLogin, you can use 'ifNumberOfAccountsLessThan' and 'ifNumberOfAccountsAtLeast'
-# to specify limits to how many accounts a player can have (matched by IP) for a command to be run:
+# 对于 onLogin 和 onFirstLogin，您可以使用 'ifNumberOfAccountsLessThan' 和 'ifNumberOfAccountsAtLeast'
+# 来为玩家可以拥有多少个帐户（通过 IP 匹配）指定限制，以便运行命令：
 # onLogin:
 #   warnOnManyAccounts:
-#     command: 'say Uh oh! %p has many alt accounts!'
+#     command: 'say 哎呀！%p 有很多辅助账户！'
 #     executor: CONSOLE
 #     ifNumberOfAccountsAtLeast: 5
-# Commands to run for players logging in whose 'last login date' was empty
+# 在登录时运行的玩家的 '上次登录日期' 为空的命令
 onFirstLogin: {}
 onJoin: {}
 onLogin: {}
-# These commands are called whenever a logged in player uses /logout or quits.
-# The commands are not run if a player that was not logged in quits the server.
-# Note: if your server crashes, these commands won't be run, so don't rely on them to undo
-# 'onLogin' commands that would be dangerous for non-logged in players to have!
+# 每当已登录的玩家使用 /logout 或退出游戏时都会调用这些命令。
+# 如果未登录的玩家退出服务器，则不会运行这些命令。
+# 注意：如果您的服务器崩溃，这些命令将不会运行，因此不要依赖它们来撤消
+# 'onLogin' 命令，这对于非登录玩家来说可能是危险的！
 onLogout: {}
 onRegister: {}
 onSessionLogin: {}
-# Commands to run whenever a player is unregistered (by himself, or by an admin)
+# 每当玩家注销帐户（无论是玩家自己还是管理员操作）时运行的命令
 onUnregister: {}

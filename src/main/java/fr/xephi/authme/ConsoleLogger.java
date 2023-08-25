@@ -106,7 +106,7 @@ public final class ConsoleLogger {
      */
     public void warning(String message) {
         logger.warning(message);
-        writeLog("[WARN] " + message);
+        writeLog("[警告] " + message);
     }
 
     /**
@@ -128,7 +128,7 @@ public final class ConsoleLogger {
      */
     public void info(String message) {
         logger.info(message);
-        writeLog("[INFO] " + message);
+        writeLog("[信息] " + message);
     }
 
     /**
@@ -142,7 +142,7 @@ public final class ConsoleLogger {
     public void fine(String message) {
         if (logLevel.includes(LogLevel.FINE)) {
             logger.info(message);
-            writeLog("[FINE] " + message);
+            writeLog("[信息:调试] " + message);
         }
     }
 
@@ -215,7 +215,7 @@ public final class ConsoleLogger {
     }
 
     private void logAndWriteWithDebugPrefix(String message) {
-        String debugMessage = "[DEBUG] " + message;
+        String debugMessage = "[信息:调试] " + message;
         logger.info(debugMessage);
         writeLog(debugMessage);
     }

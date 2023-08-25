@@ -7,11 +7,11 @@ on:
       - master
 
 jobs:
-  build_and_test:
+  Build:
     strategy:
       matrix:
         jdkversion: [11]
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-java@v3
@@ -19,5 +19,6 @@ jobs:
         distribution: 'temurin'
         java-version: ${{ matrix.jdkversion }}
         cache: 'maven'
-    - name: Build with Maven
+    - name: 使用Maven构建
       run: mvn -V -B clean package --file pom.xml
+      

@@ -1,29 +1,39 @@
 package fr.xephi.authme.listener;
 
+import fr.xephi.authme.AuthMe;
+import fr.xephi.authme.api.v3.AuthMeApi;
 import fr.xephi.authme.data.auth.PlayerCache;
 import fr.xephi.authme.datasource.DataSource;
 import fr.xephi.authme.initialization.SettingsDependent;
 import fr.xephi.authme.service.ValidationService;
 import fr.xephi.authme.settings.Settings;
 import fr.xephi.authme.settings.properties.RegistrationSettings;
+import fr.xephi.authme.settings.properties.SecuritySettings;
 import fr.xephi.authme.util.PlayerUtils;
+import org.bukkit.Material;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
 import org.bukkit.event.entity.EntityEvent;
+import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.inventory.InventoryOpenEvent;
 import org.bukkit.event.player.PlayerEvent;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
 
 import javax.inject.Inject;
+import java.util.Objects;
 
 /**
  * Service class for the AuthMe listeners to determine whether an event should be canceled.
  */
 class ListenerService implements SettingsDependent {
-
+    private final AuthMeApi authmeApi = AuthMeApi.getInstance();
     private final DataSource dataSource;
     private final PlayerCache playerCache;
     private final ValidationService validationService;
-
     private boolean isRegistrationForced;
+
 
     @Inject
     ListenerService(Settings settings, DataSource dataSource, PlayerCache playerCache,
@@ -76,8 +86,17 @@ class ListenerService implements SettingsDependent {
      * @param player the player to verify
      * @return true if the associated event should be canceled, false otherwise
      */
+
     public boolean shouldCancelEvent(Player player) {
+
         return player != null && !checkAuth(player.getName()) && !PlayerUtils.isNpc(player);
+    }
+    public boolean shouldCancelInvEvent(Player player) {
+        try {
+            return !AuthMe.GUIEnabled || authmeApi.isRegistered(player.getName()) || RegisterListener.closeReasonMap.containsKey(player)/* || !player.getOpenInventory().getTitle().equals("请验证你是真人")*/;
+        } catch (Exception e) {
+            return true;
+        }
     }
 
     @Override
@@ -93,7 +112,7 @@ class ListenerService implements SettingsDependent {
      * @return true if the player may play, false otherwise
      */
     private boolean checkAuth(String name) {
-        if (validationService.isUnrestricted(name) || playerCache.isAuthenticated(name)) {
+        if (validationService.isUnrestricted(name) || playerCache.isAuthenticated(name)){
             return true;
         }
         if (!isRegistrationForced && !dataSource.isAuthAvailable(name)) {

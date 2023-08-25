@@ -17,9 +17,9 @@ public abstract class PlayerCommand implements ExecutableCommand {
         } else {
             String alternative = getAlternativeCommand();
             if (alternative != null) {
-                sender.sendMessage("Player only! Please use " + alternative + " instead.");
+                sender.sendMessage("此命令仅限玩家使用!请使用 " + alternative + " .");
             } else {
-                sender.sendMessage("This command is only for players.");
+                sender.sendMessage("此命令只能被玩家执行.");
             }
         }
     }

@@ -114,10 +114,6 @@ class InventoryPacketAdapter extends PacketAdapter {
             itemListModifier.write(0, Arrays.asList(blankInventory));
         }
 
-        try {
-            protocolManager.sendServerPacket(player, inventoryPacket, false);
-        } catch (InvocationTargetException invocationExc) {
-            logger.logException("Error during sending blank inventory", invocationExc);
-        }
+        protocolManager.sendServerPacket(player, inventoryPacket, false);
     }
 }
