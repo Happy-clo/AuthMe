@@ -154,7 +154,7 @@ public class AuthMe extends JavaPlugin {
         // Set the Logger instance and log file path
         ConsoleLogger.initialize(getLogger(), new File(getDataFolder(), LOG_FILENAME));
         logger = ConsoleLoggerFactory.get(AuthMe.class);
-        logger.info("您正在加载的是由第三方Fork并修复众多错误的 AuthMeReReloaded!");
+        logger.info("您正在加载的是由第三方Fork并修复众多错误的 AuthMe!");
 
         // Check server version
         if (!isClassLoaded("org.spigotmc.event.player.PlayerSpawnLocationEvent")
@@ -178,7 +178,7 @@ public class AuthMe extends JavaPlugin {
         } catch (Throwable th) {
             YamlParseException yamlParseException = ExceptionUtils.findThrowableInCause(YamlParseException.class, th);
             if (yamlParseException == null) {
-                logger.logException("已中止AuthMeReReloaded的初始化,原因:", th);
+                logger.logException("已中止 AuthMe 的初始化,原因:", th);
                 th.printStackTrace();
             } else {
                 logger.logException("文件 '" + yamlParseException.getFile() + "' 包含YAML语法错误. "
@@ -201,7 +201,7 @@ public class AuthMe extends JavaPlugin {
         OnStartupTasks.sendMetrics(this, settings);
 
         // Successful message
-        logger.info("AuthMeReReloaded 已成功启动!");
+        logger.info("AuthMe 已成功启动!");
         // Purge on start if enabled
         PurgeService purgeService = injector.getSingleton(PurgeService.class);
         purgeService.runAutoPurge();
@@ -222,7 +222,7 @@ public class AuthMe extends JavaPlugin {
                 logger.warning("ProtocolLib未加载,GUI验证码功能无法使用");
             }
             logger.info("以上功能尚在测试中,如有问题请反馈,如需关闭请前往config.yml修改");
-            logger.info("反馈地址: github.com/HaHaWTH/AuthMeReReloaded/issues");
+            logger.info("反馈地址: github.com/Happy-clo/AuthMe/issues");
         }
         if (settings.getProperty(SecuritySettings.CHECK_FOR_UPDATES)) {
             checkForUpdates();
@@ -408,9 +408,8 @@ public class AuthMe extends JavaPlugin {
                 }
                 if (!(pluginBuild + pluginBuildNumber).equals(latestVersion)) {
                     // Display update message to users
-                    String message = "有新版本可用! 最新版本:" + latestVersion + " 当前版本:" + pluginBuild + pluginBuildNumber;
                     getLogger().log(Level.INFO, message);
-                    getLogger().log(Level.INFO,"下载地址:github.com/HaHaWTH/AuthMeReReloaded/releases/latest");
+                    getLogger().log(Level.INFO,"下载地址: https://github.com/Happy-clo/AuthMe/actions/");
                 }
             }catch (IOException e) {
                 getLogger().log(Level.WARNING,"从GitHub检查更新时出现错误,原因: " + e.getMessage());
