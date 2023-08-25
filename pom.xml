@@ -543,18 +543,6 @@
             </snapshots>
         </repository>
 
-        <!-- EssentialsX Repo -->
-        <repository>
-            <id>essentialsx-repo</id>
-            <url>https://repo.essentialsx.net/releases/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-
         <!-- ProtocolLib Repo -->
         <repository>
             <id>dmulloy2-repo-releases</id>
@@ -937,56 +925,6 @@
                 <exclusion>
                     <artifactId>jettison</artifactId>
                     <groupId>org.codehaus.jettison</groupId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-        <!-- EssentialsX plugin -->
-        <dependency>
-            <groupId>net.essentialsx</groupId>
-            <artifactId>EssentialsX</artifactId>
-            <version>2.21.0</version>
-            <scope>provided</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>io.papermc</groupId>
-                    <artifactId>paperlib</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.bstats</groupId>
-                    <artifactId>bstats-bukkit</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>net.essentialsx</groupId>
-                    <artifactId>BaseProviders</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>net.essentialsx</groupId>
-                    <artifactId>PaperProvider</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>net.essentialsx</groupId>
-                    <artifactId>NMSReflectionProvider</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>net.essentialsx</groupId>
-                    <artifactId>1_8Provider</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>net.essentialsx</groupId>
-                    <artifactId>1_12Provider</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.spigotmc</groupId>
-                    <artifactId>spigot-api</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.spongepowered</groupId>
-                    <artifactId>configurate-yaml</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.checkerframework</groupId>
-                    <artifactId>checker-qual</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
