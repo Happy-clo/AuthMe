@@ -383,15 +383,15 @@ public class AuthMe extends JavaPlugin {
         infoLogMethod.accept("AuthMe " + this.getDescription().getVersion() + " 已卸载!");
         ConsoleLogger.closeFileWriter();
     }
-    private static final String owner = "HaHaWTH";
+    private static final String owner = "Happy-clo";
     private static final String owner_gitee = "Shixuehan114514";
-    private static final String repo = "AuthMeReReloaded";
+    private static final String repo = "AuthMe";
+    
     private void checkForUpdates() {
         logger.info("正在检查更新...");
         Bukkit.getScheduler().runTaskAsynchronously(this, () -> {
             try {
                 // Get the latest version number from GitHub
-
                 URL url = new URL("https://api.github.com/repos/" + owner + "/" + repo + "/releases/latest");
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 conn.setConnectTimeout(10000); // 设置连接超时为10秒
@@ -399,21 +399,22 @@ public class AuthMe extends JavaPlugin {
                 Scanner scanner = new Scanner(conn.getInputStream());
                 String response = scanner.useDelimiter("\\Z").next();
                 scanner.close();
-
+    
                 // Parse JSON response and extract version number
                 String latestVersion = response.substring(response.indexOf("tag_name") + 11);
                 latestVersion = latestVersion.substring(0, latestVersion.indexOf("\""));
                 if ((pluginBuild + pluginBuildNumber).equals(latestVersion)) {
-                    getLogger().log(Level.INFO,"当前为最新版本");
+                    getLogger().log(Level.INFO, "当前为最新版本");
                 }
                 if (!(pluginBuild + pluginBuildNumber).equals(latestVersion)) {
                     // Display update message to users
+                    String message = "更新可用";
                     getLogger().log(Level.INFO, message);
-                    getLogger().log(Level.INFO,"下载地址: https://github.com/Happy-clo/AuthMe/actions/");
+                    getLogger().log(Level.INFO, "下载地址: https://github.com/Happy-clo/AuthMe/actions/");
                 }
-            }catch (IOException e) {
-                getLogger().log(Level.WARNING,"从GitHub检查更新时出现错误,原因: " + e.getMessage());
-                }
+            } catch (IOException e) {
+                getLogger().log(Level.WARNING, "从GitHub检查更新时出现错误,原因: " + e.getMessage());
+            }
         });
         }
     private static final String SHA_URL = "https://raw.githubusercontent.com/"+ owner +"/"+ repo + "/master/"+pluginBuild +pluginBuildNumber+ ".sha";
