@@ -7,8 +7,8 @@
 registration:
     disabled: '&c注册已被禁止'
     name_taken: '&c此用户已经在此服务器注册过'
-    register_request: '&b请输入“&a/reg <密码> <重复密码>&b”以注册'
-    command_usage: '&c正确用法:“/reg <密码> <重复密码>”'
+    register_request: '&b请输入“&a/reg <邮箱> <重复邮箱>&b”以注册'
+    command_usage: '&c正确用法:“/reg <邮箱> <重复邮箱>”'
     reg_only: '&c只允许注册过的玩家进服!'
     success: '&a*** 已成功注册 ***'
 

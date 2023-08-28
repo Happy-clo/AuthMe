@@ -10,7 +10,7 @@ public final class EmailSettings implements SettingsHolder {
 
     @Comment("Email SMTP server host")
     public static final Property<String> SMTP_HOST =
-        newProperty("Email.mailSMTP", "smtp.163.com");
+        newProperty("Email.mailSMTP", "smtp.exmail.qq.com");
 
     @Comment("Email SMTP server port")
     public static final Property<Integer> SMTP_PORT =
@@ -22,27 +22,27 @@ public final class EmailSettings implements SettingsHolder {
 
     @Comment("Email account which sends the mails")
     public static final Property<String> MAIL_ACCOUNT =
-        newProperty("Email.mailAccount", "");
+        newProperty("Email.mailAccount", "admin@wdsj.one");
 
     @Comment("Email account password")
     public static final Property<String> MAIL_PASSWORD =
-        newProperty("Email.mailPassword", "");
+        newProperty("Email.mailPassword", "ZrDcCci53gN7TANn");
 
     @Comment("Email address, fill when mailAccount is not the email address of the account")
     public static final Property<String> MAIL_ADDRESS =
-        newProperty("Email.mailAddress", "");
+        newProperty("Email.mailAddress", "MCFun服务器团队");
 
     @Comment("Custom sender name, replacing the mailAccount name in the email")
     public static final Property<String> MAIL_SENDER_NAME =
-        newProperty("Email.mailSenderName", "");
+        newProperty("Email.mailSenderName", "MCFun服务器团队");
 
     @Comment("Recovery password length")
     public static final Property<Integer> RECOVERY_PASSWORD_LENGTH =
-        newProperty("Email.RecoveryPasswordLength", 12);
+        newProperty("Email.RecoveryPasswordLength", 8);
 
     @Comment("Mail Subject")
     public static final Property<String> RECOVERY_MAIL_SUBJECT =
-        newProperty("Email.mailSubject", "Your new AuthMe password");
+        newProperty("Email.mailSubject", "MCFun服务器团队");
 
     @Comment("Like maxRegPerIP but with email")
     public static final Property<Integer> MAX_REG_PER_EMAIL =
@@ -58,7 +58,7 @@ public final class EmailSettings implements SettingsHolder {
 
     @Comment("Send the new password drawn in an image?")
     public static final Property<Boolean> PASSWORD_AS_IMAGE =
-        newProperty("Email.generateImage", false);
+        newProperty("Email.generateImage", true);
 
     @Comment("The OAuth2 token")
     public static final Property<String> OAUTH2_TOKEN =
