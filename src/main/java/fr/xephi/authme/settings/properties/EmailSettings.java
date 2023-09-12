@@ -22,19 +22,19 @@ public final class EmailSettings implements SettingsHolder {
 
     @Comment("Email account which sends the mails")
     public static final Property<String> MAIL_ACCOUNT =
-        newProperty("Email.mailAccount", "admin@wdsj.one");
+        newProperty("Email.mailAccount", "");
 
     @Comment("Email account password")
     public static final Property<String> MAIL_PASSWORD =
-        newProperty("Email.mailPassword", "ZrDcCci53gN7TANn");
+        newProperty("Email.mailPassword", "");
 
     @Comment("Email address, fill when mailAccount is not the email address of the account")
     public static final Property<String> MAIL_ADDRESS =
-        newProperty("Email.mailAddress", "support@wdsj.one");
+        newProperty("Email.mailAddress", "");
 
     @Comment("Custom sender name, replacing the mailAccount name in the email")
     public static final Property<String> MAIL_SENDER_NAME =
-        newProperty("Email.mailSenderName", "MCFun服务器团队");
+        newProperty("Email.mailSenderName", "");
 
     @Comment("Recovery password length")
     public static final Property<Integer> RECOVERY_PASSWORD_LENGTH =
@@ -42,7 +42,7 @@ public final class EmailSettings implements SettingsHolder {
 
     @Comment("Mail Subject")
     public static final Property<String> RECOVERY_MAIL_SUBJECT =
-        newProperty("Email.mailSubject", "MCFun服务器团队");
+        newProperty("Email.mailSubject", "");
 
     @Comment("Like maxRegPerIP but with email")
     public static final Property<Integer> MAX_REG_PER_EMAIL =
@@ -65,10 +65,10 @@ public final class EmailSettings implements SettingsHolder {
         newProperty("Email.emailOauth2Token", "");
     @Comment("Email notifications when the server shuts down")
     public static final Property<Boolean> SHUTDOWN_MAIL =
-        newProperty("Email.shutDownEmail", true);
+        newProperty("Email.shutDownEmail", false);
     @Comment("Email notification address when the server is shut down")
     public static final Property<String> SHUTDOWN_MAIL_ADDRESS =
-        newProperty("Email.shutDownEmailAddress", "admin@wdsj.one");
+        newProperty("Email.shutDownEmailAddress", "");
 
     private EmailSettings() {
     }
