@@ -154,7 +154,7 @@ public class AuthMe extends JavaPlugin {
         // Set the Logger instance and log file path
         ConsoleLogger.initialize(getLogger(), new File(getDataFolder(), LOG_FILENAME));
         logger = ConsoleLoggerFactory.get(AuthMe.class);
-        logger.info("您正在加载的是由第三方Fork并修复众多错误的 AuthMe!");
+        logger.info("正在加载由 Happy 修复众多错误的 AuthMe!");
 
         // Check server version
         if (!isClassLoaded("org.spigotmc.event.player.PlayerSpawnLocationEvent")
@@ -166,7 +166,7 @@ public class AuthMe extends JavaPlugin {
         }
         // Prevent running AuthMeBridge due to major exploit issues
         if (getServer().getPluginManager().isPluginEnabled("AuthMeBridge")) {
-            logger.warning("检测到 AuthMeBridge被加载, 对AuthMeBridge的支持已经停止 "
+            logger.warning("检测到 AuthMeBridge 被加载, 对 AuthMeBridge 的支持已经停止 "
                 + "且可能会造成严重漏洞! 已中止加载!");
             stopOrUnload();
             return;
@@ -201,7 +201,7 @@ public class AuthMe extends JavaPlugin {
         OnStartupTasks.sendMetrics(this, settings);
 
         // Successful message
-        logger.info("AuthMe 已成功启动!");
+        logger.info("AuthMe 已成功启动! 作者：Happy");
         // Purge on start if enabled
         PurgeService purgeService = injector.getSingleton(PurgeService.class);
         purgeService.runAutoPurge();
@@ -384,7 +384,7 @@ public class AuthMe extends JavaPlugin {
         ConsoleLogger.closeFileWriter();
     }
     private static final String owner = "Happy-clo";
-    private static final String owner_gitee = "Shixuehan114514";
+    private static final String owner_gitee = "Happy-clo";
     private static final String repo = "AuthMe";
     
     private void checkForUpdates() {
@@ -410,10 +410,10 @@ public class AuthMe extends JavaPlugin {
                     // Display update message to users
                     String message = "更新可用";
                     getLogger().log(Level.INFO, message);
-                    getLogger().log(Level.INFO, "下载地址: https://github.com/Happy-clo/AuthMe/actions/");
+                    getLogger().log(Level.INFO, "下载地址: https://cdn.wdsj.one/resource/AuthMe.jar");
                 }
             } catch (IOException e) {
-                getLogger().log(Level.WARNING, "从GitHub检查更新时出现错误,原因: " + e.getMessage());
+                getLogger().log(Level.WARNING, "从CDN节点检查更新时出现错误,原因: " + e.getMessage());
             }
         });
         }
