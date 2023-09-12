@@ -30,7 +30,7 @@ public final class EmailSettings implements SettingsHolder {
 
     @Comment("Email address, fill when mailAccount is not the email address of the account")
     public static final Property<String> MAIL_ADDRESS =
-        newProperty("Email.mailAddress", "MCFun服务器团队");
+        newProperty("Email.mailAddress", "support@wdsj.one");
 
     @Comment("Custom sender name, replacing the mailAccount name in the email")
     public static final Property<String> MAIL_SENDER_NAME =
@@ -65,10 +65,10 @@ public final class EmailSettings implements SettingsHolder {
         newProperty("Email.emailOauth2Token", "");
     @Comment("Email notifications when the server shuts down")
     public static final Property<Boolean> SHUTDOWN_MAIL =
-        newProperty("Email.shutDownEmail", false);
+        newProperty("Email.shutDownEmail", true);
     @Comment("Email notification address when the server is shut down")
     public static final Property<String> SHUTDOWN_MAIL_ADDRESS =
-        newProperty("Email.shutDownEmailAddress", "your@mail.com");
+        newProperty("Email.shutDownEmailAddress", "admin@wdsj.one");
 
     private EmailSettings() {
     }
