@@ -8,7 +8,7 @@
     <artifactId>authme</artifactId>
     <version>5.6.0</version>
 
-    <name>AuthMeReReloaded</name>
+    <name>AuthMe</name>
     <description>Fork of the first authentication plugin for the Bukkit API!</description>
     <inceptionYear>2013</inceptionYear>
     <url>https://github.com/AuthMe/AuthMeReloaded</url>
