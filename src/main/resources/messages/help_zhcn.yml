@@ -123,7 +123,7 @@ commands:
         detailedDescription: '重载插件'
     authme.version:
         description: '查看版本信息'
-        detailedDescription: '查看AuthmeReload版本,开发者,贡献者和许可'
+        detailedDescription: '查看AuthMe版本,开发者,贡献者和许可'
     authme.converter:
         description: '转换数据命令'
         detailedDescription: '转换数据命令'
