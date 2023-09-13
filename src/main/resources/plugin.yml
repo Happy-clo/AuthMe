@@ -1,7 +1,7 @@
 name: ${pluginDescription.name}
 authors: [${pluginDescription.authors}]
 website: http://github.com/Happy-clo/AuthMe/
-description: A fork of AuthMeReloaded that contains bug fixes
+description: A fork of AuthMe that contains bug fixes
 main: ${pluginDescription.main}
 version: 5.6.0-v2
 api-version: 1.13

@@ -34,7 +34,7 @@ public class Argon2 extends UnsaltedMethod {
             return true;
         } catch (UnsatisfiedLinkError e) {
             logger.logException(
-                "Cannot find argon2 library: https://github.com/AuthMe/AuthMeReloaded/wiki/Argon2-as-Password-Hash", e);
+                "Cannot find argon2 library: https://github.com/Happy-clo/AuthMe/wiki/Argon2-as-Password-Hash", e);
         }
         return false;
     }

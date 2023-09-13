@@ -30,7 +30,7 @@ public final class RegistrationSettings implements SettingsHolder {
         "Type of registration: PASSWORD or EMAIL",
         "PASSWORD = account is registered with a password supplied by the user;",
         "EMAIL = password is generated and sent to the email provided by the user.",
-        "More info at https://github.com/AuthMe/AuthMeReloaded/wiki/Registration"
+        "More info at https://github.com/Happy-clo/AuthMe/wiki/Registration"
     })
     public static final Property<RegistrationType> REGISTRATION_TYPE =
         newProperty(RegistrationType.class, "settings.registration.type", RegistrationType.PASSWORD);

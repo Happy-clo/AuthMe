@@ -76,7 +76,7 @@ public final class LimboSettings implements SettingsHolder {
             "such as OP status, ability to fly, and walk/fly speed.",
             "Once the user is logged in, we add back the properties we previously saved.",
             "In this section, you may define how these properties should be handled.",
-            "Read more at https://github.com/AuthMe/AuthMeReloaded/wiki/Limbo-players"
+            "Read more at https://github.com/Happy-clo/AuthMe/wiki/Limbo-players"
         };
         conf.setComment("limbo", limboExplanation);
     }

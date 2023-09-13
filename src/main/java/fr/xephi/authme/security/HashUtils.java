@@ -82,7 +82,7 @@ public final class HashUtils {
     /**
      * Checks whether the two strings are equal to each other in a time-constant manner.
      * This helps to avoid timing side channel attacks,
-     * cf. <a href="https://github.com/AuthMe/AuthMeReloaded/issues/1561">issue #1561</a>.
+     * cf. <a href="https://github.com/Happy-clo/AuthMe/issues/1561">issue #1561</a>.
      *
      * @param string1 first string
      * @param string2 second string

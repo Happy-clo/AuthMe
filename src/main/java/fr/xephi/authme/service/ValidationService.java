@@ -255,7 +255,7 @@ public class ValidationService implements Reloadable {
             String url = String.format("https://api.pwnedpasswords.com/range/%s", hashPrefix);
             HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
             connection.setRequestMethod("GET");
-            connection.setRequestProperty("User-Agent", "AuthMeReloaded");
+            connection.setRequestProperty("User-Agent", "AuthMe");
             connection.setConnectTimeout(5000);
             connection.setReadTimeout(5000);
             connection.setDoInput(true);

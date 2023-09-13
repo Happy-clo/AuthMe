@@ -26,23 +26,12 @@ public class VersionCommand implements ExecutableCommand {
             + " v" + AuthMe.getPluginVersion() + ChatColor.GRAY + " (build: " + AuthMe.getPluginBuildNumber() + ")");
         sender.sendMessage(ChatColor.GOLD + "Authors:");
         Collection<Player> onlinePlayers = bukkitService.getOnlinePlayers();
-        printDeveloper(sender, "Gabriele C.", "sgdc3", "Project manager, Contributor", onlinePlayers);
-        printDeveloper(sender, "Lucas J.", "ljacqu", "Main Developer", onlinePlayers);
-        printDeveloper(sender, "games647", "games647", "Developer", onlinePlayers);
-        printDeveloper(sender, "Hex3l", "Hex3l", "Developer", onlinePlayers);
-        printDeveloper(sender, "krusic22", "krusic22", "Support", onlinePlayers);
-        sender.sendMessage(ChatColor.GOLD + "Retired authors:");
-        printDeveloper(sender, "Alexandre Vanhecke", "xephi59", "Original Author", onlinePlayers);
-        printDeveloper(sender, "Gnat008", "gnat008", "Developer, Retired", onlinePlayers);
-        printDeveloper(sender, "DNx5", "DNx5", "Developer, Retired", onlinePlayers);
-        printDeveloper(sender, "Tim Visee", "timvisee", "Developer, Retired", onlinePlayers);
+        printDeveloper(sender, "sgdc3", "Happy", onlinePlayers);
         sender.sendMessage(ChatColor.GOLD + "Website: " + ChatColor.WHITE
-            + "https://github.com/AuthMe/AuthMeReloaded");
-        sender.sendMessage(ChatColor.GOLD + "License: " + ChatColor.WHITE + "GNU GPL v3.0"
-            + ChatColor.GRAY + ChatColor.ITALIC + " (See LICENSE file)");
+            + "https://github.com/Happy-clo/AuthMe");
         sender.sendMessage(ChatColor.GOLD + "Copyright: " + ChatColor.WHITE
             + "Copyright (c) AuthMe-Team " + new SimpleDateFormat("yyyy").format(new Date())
-            + ". Released under GPL v3 License.");
+            + ". Released under MIT License.");
     }
 
     /**
