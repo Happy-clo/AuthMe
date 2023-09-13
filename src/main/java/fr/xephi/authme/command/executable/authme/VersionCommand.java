@@ -26,7 +26,7 @@ public class VersionCommand implements ExecutableCommand {
             + " v" + AuthMe.getPluginVersion() + ChatColor.GRAY + " (build: " + AuthMe.getPluginBuildNumber() + ")");
         sender.sendMessage(ChatColor.GOLD + "Authors:");
         Collection<Player> onlinePlayers = bukkitService.getOnlinePlayers();
-        printDeveloper(sender, "Happy", onlinePlayers);
+        printDeveloper(sender, "Happy");
         sender.sendMessage(ChatColor.GOLD + "Website: " + ChatColor.WHITE
             + "https://github.com/Happy-clo/AuthMe");
         sender.sendMessage(ChatColor.GOLD + "Copyright: " + ChatColor.WHITE
