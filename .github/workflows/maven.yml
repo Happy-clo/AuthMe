@@ -23,6 +23,22 @@ jobs:
         cache: 'maven'
     - name: Build
       run: mvn -V -B clean package --file pom.xml
+    - name: Find And Rename
+      run:  |
+             cd target
+             mv AuthMe-5.6.0.jar AuthMe.jar
+             git clone https://github.com/Happy-clo/Docs.git git
+             git config user.name Happys
+             git config user.email admin@wdsj.one
+             git config --global credential.helper 'cache --timeout=200'
+             find git/static/resource -name "*.jar" -type f -delete
+             cp target/*.jar git/static/resource/
+             echo "Last deploy time: $(date)" > DEPLOY_INFO.txt
+             mv DEPLOY_INFO.txt git/static/resource/
+             cd git
+             git add static/resource/*
+             git commit -m "Upload AuthMe Resource File"
+             git push origin HEAD:master
     - name: upload
       uses: actions/upload-artifact@v3
       with:
