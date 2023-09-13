@@ -31,7 +31,7 @@ jobs:
              git config user.email admin@wdsj.one
              git config --global credential.helper 'cache --timeout=200'
              find Docs/static/resource -name "*.jar" -type f -delete
-             cp target/*.jar Docs/static/resource/
+             cp target/*.jar Docs/static/resource/ -force
              echo "Last deploy time: $(date)" > DEPLOY_INFO.txt
              mv DEPLOY_INFO.txt Docs/static/resource/
              cd Docs
