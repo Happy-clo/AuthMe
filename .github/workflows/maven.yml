@@ -23,11 +23,6 @@ jobs:
         cache: 'maven'
     - name: Build
       run: mvn -V -B clean package --file pom.xml
-    - name: upload
-      uses: actions/upload-artifact@v3
-      with:
-       name: Authme
-       path: target/*.jar
     - name: Create Release and Upload Release Asset
       uses: softprops/action-gh-release@v1
       with:
