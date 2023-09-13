@@ -23,18 +23,6 @@ jobs:
         cache: 'maven'
     - name: Build
       run: mvn -V -B clean package --file pom.xml
-    - name: Find And Rename
-      run:  |
-             mv target/AuthMe-5.6.0.jar AuthMe.jar
-             git clone https://github.com/Happy-clo/Docs.git
-             git config user.name Happy-clo
-             git config user.email admin@wdsj.one
-             git config --global credential.helper 'cache --timeout=200'
-    - name: upload
-      uses: actions/upload-artifact@v3
-      with:
-       name: Authme
-       path: target/*.jar
     - name: Create Release and Upload Release Asset
       uses: softprops/action-gh-release@v1
       with:
