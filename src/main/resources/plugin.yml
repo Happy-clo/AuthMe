@@ -3,7 +3,7 @@ authors: [${pluginDescription.authors}]
 website: http://github.com/Happy-clo/AuthMe/
 description: A fork of AuthMeReloaded that contains bug fixes
 main: ${pluginDescription.main}
-version: 5.6.0-v2
+version: 5.6.0-v3
 api-version: 1.13
 softdepend:
     - Vault
