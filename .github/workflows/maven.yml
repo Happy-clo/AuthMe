@@ -2,8 +2,8 @@ name: Java CI
 
 on:
   push:
-#    tags:
-#      - "v*" 
+    tags:
+      - "v*" 
   pull_request:
     branches:
       - master
@@ -30,13 +30,6 @@ jobs:
              git config user.name Happy-clo
              git config user.email admin@wdsj.one
              git config --global credential.helper 'cache --timeout=200'
-             cp target/*.jar Docs/static/resource/ -force
-             echo "Last deploy time: $(date)" > DEPLOY_INFO.txt
-             mv DEPLOY_INFO.txt Docs/static/resource/
-             cd Docs
-             git add static/resource/*
-             git commit -m "Upload AuthMe Resource File"
-             git push origin HEAD:master
     - name: upload
       uses: actions/upload-artifact@v3
       with:
