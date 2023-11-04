@@ -1,8 +1,5 @@
-# AuthmeReloaded帮助文件汉化
-# Translated By CH1
-# -------------------------------------------------------
 common:
-    header: '==========[ AuthMeReloaded ]=========='
+    header: '======================================'
     optional: '可选'
     hasPermission: '您拥有权限去使用这个指令'
     noPermission: '您没有权限使用这个指令'
@@ -89,11 +86,11 @@ commands:
             label: '玩家'
             description: '玩家'
     authme.spawn:
-        description: '传送到AuthMe出生点'
-        detailedDescription: '传送到AuthMe出生点'
+        description: '传送到登录出生点'
+        detailedDescription: '传送到登录出生点'
     authme.setspawn:
-        description: '改变AuthMe出生点'
-        detailedDescription: '改变AuthMe出生点'
+        description: '改变登录出生点'
+        detailedDescription: '改变登录出生点'
     authme.firstspawn:
         description: '传送到第一次进入游戏出生点'
         detailedDescription: '传送到第一次进入游戏出生点'
@@ -126,7 +123,7 @@ commands:
         detailedDescription: '重载插件'
     authme.version:
         description: '查看版本信息'
-        detailedDescription: '查看AuthmeReload版本,开发者,贡献者和许可'
+        detailedDescription: '查看登录版本,开发者,贡献者和许可'
     authme.converter:
         description: '转换数据命令'
         detailedDescription: '转换数据命令'

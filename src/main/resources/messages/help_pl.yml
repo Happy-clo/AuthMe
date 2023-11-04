@@ -3,7 +3,7 @@
 # -------------------------------------------------------
 # Lista tekstu uzyta w pomocy.
 common:
-    header: '==========[ AuthMeReloaded - Pomoc ]=========='
+    header: '==========[ AuthMeed - Pomoc ]=========='
     optional: 'Opcjonalnie'
     hasPermission: 'Posiadasz uprawnienia'
     noPermission: 'Brak uprawnień'

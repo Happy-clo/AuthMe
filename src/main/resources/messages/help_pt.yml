@@ -3,7 +3,7 @@
 # -------------------------------------------------------
 # List of texts used in the help section
 common:
-    header: '==========[ AJUDA DO AuthMeReloaded ]=========='
+    header: '==========[ AJUDA DO AuthMeed ]=========='
     optional: 'Opcional'
     hasPermission: 'Tu tens permissão'
     noPermission: 'Não tens permissão'

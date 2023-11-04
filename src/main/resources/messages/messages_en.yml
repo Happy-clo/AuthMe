@@ -20,6 +20,7 @@ password:
   unsafe_password: '&cThe chosen password isn''t safe, please choose another one...'
   forbidden_characters: '&4Your password contains illegal characters. Allowed chars: %valid_chars'
   wrong_length: '&cYour password is too short or too long! Please try with another one!'
+  pwned_password: '&cYour chosen password is not secure. It was used %pwned_count times already! Please use a strong password...'
 
 # Login
 login:

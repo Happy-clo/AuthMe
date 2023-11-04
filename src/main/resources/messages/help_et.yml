@@ -3,7 +3,7 @@
 # -------------------------------------------------------
 # List of texts used in the help section
 common:
-    header: '==========[ AuthMeReloaded ABI ]=========='
+    header: '==========[ AuthMeed ABI ]=========='
     optional: 'Valikuline'
     hasPermission: 'Sul on luba'
     noPermission: 'Pole luba'

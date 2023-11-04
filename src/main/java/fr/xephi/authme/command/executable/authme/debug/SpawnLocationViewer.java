@@ -71,7 +71,7 @@ class SpawnLocationViewer implements DebugSection {
         sender.sendMessage("Use /authme spawn and /authme firstspawn to teleport to the spawns.");
         sender.sendMessage("/authme set(first)spawn sets the (first) spawn to your current location.");
         sender.sendMessage("Use /authme debug spawn <player> to view where a player would be teleported to.");
-        sender.sendMessage("Read more at https://github.com/AuthMe/AuthMeReloaded/wiki/Spawn-Handling");
+        sender.sendMessage("Read more at https://github.com/AuthMe/AuthMeed/wiki/Spawn-Handling");
     }
 
     private void showPlayerSpawn(CommandSender sender, String playerName) {

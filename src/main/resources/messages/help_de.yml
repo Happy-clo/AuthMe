@@ -1,5 +1,5 @@
 common:
-    header: '==========[ AuthMeReloaded Hilfe ]=========='
+    header: '==========[ AuthMeed Hilfe ]=========='
     optional: 'Optional'
     hasPermission: 'Du hast Berechtigung'
     noPermission: 'Keine Berechtigung'

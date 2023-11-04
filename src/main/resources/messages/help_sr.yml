@@ -3,7 +3,7 @@
 # -------------------------------------------------------
 # Lista of teksta u pomoćnoj sekciji
 common:
-    header: '==========[ AuthMeReloaded POMOĆ ]=========='
+    header: '==========[ AuthMeed POMOĆ ]=========='
     optional: 'Opcionalno'
     hasPermission: 'Imate dozvola'
     noPermission: 'Nemate dozvola'

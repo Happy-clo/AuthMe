@@ -93,7 +93,7 @@ public class CommandInitializer {
             .parent(null)
             .labels("login", "l", "log")
             .description("Login command")
-            .detailedDescription("Command to log in using AuthMeReloaded.")
+            .detailedDescription("Command to log in using AuthMeed.")
             .withArgument("password", "Login password", MANDATORY)
             .permission(PlayerPermission.LOGIN)
             .executableCommand(LoginCommand.class)
@@ -104,7 +104,7 @@ public class CommandInitializer {
             .parent(null)
             .labels("logout")
             .description("Logout command")
-            .detailedDescription("Command to logout using AuthMeReloaded.")
+            .detailedDescription("Command to logout using AuthMeed.")
             .permission(PlayerPermission.LOGOUT)
             .executableCommand(LogoutCommand.class)
             .register();
@@ -114,7 +114,7 @@ public class CommandInitializer {
             .parent(null)
             .labels("register", "reg")
             .description("Register an account")
-            .detailedDescription("Command to register using AuthMeReloaded.")
+            .detailedDescription("Command to register using AuthMeed.")
             .withArgument("password", "Password", OPTIONAL)
             .withArgument("verifyPassword", "Verify password", OPTIONAL)
             .permission(PlayerPermission.REGISTER)
@@ -126,7 +126,7 @@ public class CommandInitializer {
             .parent(null)
             .labels("unregister", "unreg")
             .description("Unregister an account")
-            .detailedDescription("Command to unregister using AuthMeReloaded.")
+            .detailedDescription("Command to unregister using AuthMeed.")
             .withArgument("password", "Password", MANDATORY)
             .permission(PlayerPermission.UNREGISTER)
             .executableCommand(UnregisterCommand.class)
@@ -137,7 +137,7 @@ public class CommandInitializer {
             .parent(null)
             .labels("changepassword", "changepass", "cp")
             .description("Change password of an account")
-            .detailedDescription("Command to change your password using AuthMeReloaded.")
+            .detailedDescription("Command to change your password using AuthMeed.")
             .withArgument("oldPassword", "Old password", MANDATORY)
             .withArgument("newPassword", "New password", MANDATORY)
             .permission(PlayerPermission.CHANGE_PASSWORD)
@@ -152,7 +152,7 @@ public class CommandInitializer {
             .parent(null)
             .labels("captcha")
             .description("Captcha command")
-            .detailedDescription("Captcha command for AuthMeReloaded.")
+            .detailedDescription("Captcha command for AuthMeed.")
             .withArgument("captcha", "The Captcha", MANDATORY)
             .permission(PlayerPermission.CAPTCHA)
             .executableCommand(CaptchaCommand.class)
@@ -163,7 +163,7 @@ public class CommandInitializer {
             .parent(null)
             .labels("verification")
             .description("Verification command")
-            .detailedDescription("Command to complete the verification process for AuthMeReloaded.")
+            .detailedDescription("Command to complete the verification process for AuthMeed.")
             .withArgument("code", "The code", MANDATORY)
             .permission(PlayerPermission.VERIFICATION_CODE)
             .executableCommand(VerificationCommand.class)
@@ -186,7 +186,7 @@ public class CommandInitializer {
         CommandDescription authmeBase = CommandDescription.builder()
             .labels("authme")
             .description("AuthMe op commands")
-            .detailedDescription("The main AuthMeReloaded command. The root for all admin commands.")
+            .detailedDescription("The main AuthMeed command. The root for all admin commands.")
             .executableCommand(AuthMeCommand.class)
             .register();
 
@@ -359,7 +359,7 @@ public class CommandInitializer {
             .parent(authmeBase)
             .labels("purge", "delete")
             .description("Purge old data")
-            .detailedDescription("Purge old AuthMeReloaded data longer than the specified number of days ago.")
+            .detailedDescription("Purge old AuthMeed data longer than the specified number of days ago.")
             .withArgument("days", "Number of days", MANDATORY)
             .permission(AdminPermission.PURGE)
             .executableCommand(PurgeCommand.class)
@@ -404,7 +404,7 @@ public class CommandInitializer {
             .parent(authmeBase)
             .labels("purgebannedplayers", "purgebannedplayer", "deletebannedplayers", "deletebannedplayer")
             .description("Purge banned players data")
-            .detailedDescription("Purge all AuthMeReloaded data for banned players.")
+            .detailedDescription("Purge all AuthMeed data for banned players.")
             .permission(AdminPermission.PURGE_BANNED_PLAYERS)
             .executableCommand(PurgeBannedPlayersCommand.class)
             .register();
@@ -425,7 +425,7 @@ public class CommandInitializer {
             .parent(authmeBase)
             .labels("reload", "rld")
             .description("Reload plugin")
-            .detailedDescription("Reload the AuthMeReloaded plugin.")
+            .detailedDescription("Reload the AuthMeed plugin.")
             .permission(AdminPermission.RELOAD)
             .executableCommand(ReloadCommand.class)
             .register();
@@ -435,7 +435,7 @@ public class CommandInitializer {
             .parent(authmeBase)
             .labels("version", "ver", "v", "about", "info")
             .description("Version info")
-            .detailedDescription("Show detailed information about the installed AuthMeReloaded version, the "
+            .detailedDescription("Show detailed information about the installed AuthMeed version, the "
                 + "developers, contributors, and license.")
             .executableCommand(VersionCommand.class)
             .register();
@@ -444,7 +444,7 @@ public class CommandInitializer {
             .parent(authmeBase)
             .labels("converter", "convert", "conv")
             .description("Converter command")
-            .detailedDescription("Converter command for AuthMeReloaded.")
+            .detailedDescription("Converter command for AuthMeed.")
             .withArgument("job", "Conversion job: xauth / crazylogin / rakamak / "
                 + "royalauth / vauth / sqliteToSql / mysqlToSqlite / loginsecurity", OPTIONAL)
             .permission(AdminPermission.CONVERTER)
@@ -495,7 +495,7 @@ public class CommandInitializer {
             .parent(null)
             .labels("email")
             .description("Add email or recover password")
-            .detailedDescription("The AuthMeReloaded email command base.")
+            .detailedDescription("The AuthMeed email command base.")
             .executableCommand(EmailBaseCommand.class)
             .register();
 

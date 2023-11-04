@@ -1,5 +1,7 @@
 package fr.xephi.authme.listener;
 
+import fr.xephi.authme.AuthMe;
+import fr.xephi.authme.api.v3.AuthMeApi;
 import fr.xephi.authme.data.QuickCommandsProtectionManager;
 import fr.xephi.authme.data.auth.PlayerAuth;
 import fr.xephi.authme.datasource.DataSource;
@@ -18,6 +20,9 @@ import fr.xephi.authme.settings.SpawnLoader;
 import fr.xephi.authme.settings.properties.HooksSettings;
 import fr.xephi.authme.settings.properties.RegistrationSettings;
 import fr.xephi.authme.settings.properties.RestrictionSettings;
+import fr.xephi.authme.settings.properties.SecuritySettings;
+import fr.xephi.authme.util.TeleportUtils;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.entity.HumanEntity;
@@ -27,6 +32,7 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.SignChangeEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+//import org.bukkit.event.entity.EntityPickupItemEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryOpenEvent;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
@@ -45,11 +51,13 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerKickEvent;
 import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
-import org.bukkit.event.player.PlayerPickupItemEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.player.PlayerRespawnEvent;
 import org.bukkit.event.player.PlayerShearEntityEvent;
+//import org.bukkit.event.player.PlayerSwapHandItemsEvent;
 import org.bukkit.inventory.InventoryView;
+
+import static org.bukkit.Bukkit.getServer;
 
 import javax.inject.Inject;
 import java.util.Locale;
@@ -61,7 +69,11 @@ import static fr.xephi.authme.settings.properties.RestrictionSettings.ALLOW_UNAU
 /**
  * Listener class for player events.
  */
-public class PlayerListener implements Listener {
+public class PlayerListener implements Listener{
+    private final AuthMeApi authmeApi = AuthMeApi.getInstance();
+
+
+
 
     @Inject
     private Settings settings;
@@ -92,9 +104,11 @@ public class PlayerListener implements Listener {
     @Inject
     private QuickCommandsProtectionManager quickCommandsProtectionManager;
 
+
     // Lowest priority to apply fast protection checks
     @EventHandler(priority = EventPriority.LOWEST)
     public void onAsyncPlayerPreLoginEventLowest(AsyncPlayerPreLoginEvent event) {
+
         if (event.getLoginResult() != AsyncPlayerPreLoginEvent.Result.ALLOWED) {
             return;
         }
@@ -110,13 +124,18 @@ public class PlayerListener implements Listener {
         if (validationService.isUnrestricted(name)) {
             return;
         }
-
+        if (settings.getProperty(HooksSettings.HOOK_FLOODGATE_PLAYER)) {
+            if (getServer().getPluginManager().getPlugin("floodgate") != null) {
+                if (org.geysermc.floodgate.api.FloodgateApi.getInstance().isFloodgateId(event.getUniqueId())) return;
+            }
+        }
         // Non-blocking checks
         try {
             onJoinVerifier.checkIsValidName(name);
         } catch (FailedVerificationException e) {
             event.setKickMessage(messages.retrieveSingle(name, e.getReason(), e.getArgs()));
             event.setLoginResult(AsyncPlayerPreLoginEvent.Result.KICK_OTHER);
+
         }
     }
 
@@ -179,7 +198,7 @@ public class PlayerListener implements Listener {
     @EventHandler(priority = EventPriority.NORMAL)
     public void onPlayerJoin(PlayerJoinEvent event) {
         final Player player = event.getPlayer();
-
+        final AuthMeApi authmeApi = AuthMeApi.getInstance();
         if (!PlayerListener19Spigot.isPlayerSpawnLocationEventCalled()) {
             teleportationService.teleportOnJoin(player);
         }
@@ -189,11 +208,14 @@ public class PlayerListener implements Listener {
         management.performJoin(player);
 
         teleportationService.teleportNewPlayerToFirstSpawn(player);
+
     }
+
 
     @EventHandler(priority = EventPriority.HIGH) // HIGH as EssentialsX listens at HIGHEST
     public void onJoinMessage(PlayerJoinEvent event) {
         final Player player = event.getPlayer();
+
 
         // Note: join message can be null, despite api documentation says not
         if (settings.getProperty(RegistrationSettings.REMOVE_JOIN_MESSAGE)) {
@@ -329,12 +351,12 @@ public class PlayerListener implements Listener {
         }
 
         /*
-         * Limit player X and Z movements to 1 block
+         * Limit player X and Z movements
          * Deny player Y+ movements (allows falling)
          */
 
-        if (from.getBlockX() == to.getBlockX()
-            && from.getBlockZ() == to.getBlockZ()
+        if (from.getX() == to.getX()
+            && from.getZ() == to.getZ()
             && from.getY() - to.getY() >= 0) {
             return;
         }
@@ -357,9 +379,17 @@ public class PlayerListener implements Listener {
         Location spawn = spawnLoader.getSpawnLocation(player);
         if (spawn != null && spawn.getWorld() != null) {
             if (!player.getWorld().equals(spawn.getWorld())) {
-                player.teleport(spawn);
+                if(settings.getProperty(SecuritySettings.SMART_ASYNC_TELEPORT)) {
+                    TeleportUtils.teleport(player,spawn);
+                } else {
+                    player.teleport(spawn);
+                }
             } else if (spawn.distance(player.getLocation()) > settings.getProperty(ALLOWED_MOVEMENT_RADIUS)) {
-                player.teleport(spawn);
+                if(settings.getProperty(SecuritySettings.SMART_ASYNC_TELEPORT)) {
+                    TeleportUtils.teleport(player,spawn);
+                } else {
+                    player.teleport(spawn);
+                }
             }
         }
     }
@@ -450,12 +480,12 @@ public class PlayerListener implements Listener {
      * Inventory interactions
      */
 
-    @EventHandler(ignoreCancelled = true, priority = EventPriority.LOWEST)
-    public void onPlayerPickupItem(PlayerPickupItemEvent event) {
-        if (listenerService.shouldCancelEvent(event)) {
-            event.setCancelled(true);
-        }
-    }
+//    @EventHandler(ignoreCancelled = true, priority = EventPriority.LOWEST)
+//    public void onPlayerPickupItem(EntityPickupItemEvent event) {
+//        if (listenerService.shouldCancelEvent(event)) {
+//            event.setCancelled(true);
+//        }
+//    }
 
     @EventHandler(ignoreCancelled = true, priority = EventPriority.LOWEST)
     public void onPlayerDropItem(PlayerDropItemEvent event) {
@@ -483,15 +513,16 @@ public class PlayerListener implements Listener {
             return false;
         }
         Set<String> whitelist = settings.getProperty(RestrictionSettings.UNRESTRICTED_INVENTORIES);
+        //append a string for String whitelist
         return whitelist.contains(ChatColor.stripColor(inventory.getTitle()).toLowerCase(Locale.ROOT));
     }
 
     @EventHandler(ignoreCancelled = true, priority = EventPriority.LOWEST)
     public void onPlayerInventoryOpen(InventoryOpenEvent event) {
         final HumanEntity player = event.getPlayer();
-
+        Player ply = (Player) event.getPlayer();
         if (listenerService.shouldCancelEvent(player)
-            && !isInventoryWhitelisted(event.getView())) {
+            && !isInventoryWhitelisted(event.getView()) && listenerService.shouldCancelInvEvent(ply)) {
             event.setCancelled(true);
 
             /*
@@ -509,4 +540,12 @@ public class PlayerListener implements Listener {
             event.setCancelled(true);
         }
     }
+//    @EventHandler(priority = EventPriority.LOWEST)
+//    public void onSwitchHand(PlayerSwapHandItemsEvent event) {
+//        Player player = event.getPlayer();
+//        if (!player.isSneaking() || !player.hasPermission("keybindings.use"))
+//            return;
+//        event.setCancelled(true);
+//        Bukkit.dispatchCommand(event.getPlayer(), "help");
+//    }
 }

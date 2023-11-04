@@ -3,7 +3,7 @@
 # -------------------------------------------------------
 # List of texts used in the help section
 common:
-  header:                     ======[ AuthMeReloaded Segítség ]======
+  header:                     ======[ AuthMeed Segítség ]======
   optional:                   Opcionális
   hasPermission:              Van ehhez jogod
   noPermission:               Nincs jogod ehhez
@@ -36,7 +36,7 @@ section:
 commands:
   authme:
     description:              AuthMe operátor parancsok
-    detailedDescription:      Az AuthMeReloaded fő parancsa. Az összes adminisztrációs parancs gyökere.
+    detailedDescription:      Az AuthMeed fő parancsa. Az összes adminisztrációs parancs gyökere.
   authme.register:
     description:              Játékos regisztrálása
     detailedDescription:      Megadott játékos regisztrálása egy megadott jelszóval.
@@ -114,7 +114,7 @@ commands:
     detailedDescription:      Beállítja az első spawn kezdőhelyet a játékos jelenlegi pozicíójában.
   authme.purge:
     description:              Törli a régi adatokat
-    detailedDescription:      Törli az AuthMeReloaded játékos adatokat a megadott nap szerint.
+    detailedDescription:      Törli az AuthMeed játékos adatokat a megadott nap szerint.
     arg1:
       label:                  nap
       description:            Napok száma
@@ -138,7 +138,7 @@ commands:
       description:            Játékos neve vagy írd be a '*' gomb az összes játékos kiválasztásához
   authme.purgebannedplayers:
     description:              Törli az adatokat a kitiltott játékosoktól
-    detailedDescription:      Törli az összes AuthMeReloaded adatokat a kitiltott játékosoktól.
+    detailedDescription:      Törli az összes AuthMeed adatokat a kitiltott játékosoktól.
   authme.switchantibot:
     description:              Módosítja az AntiBot módot
     detailedDescription:      Az AntiBot mód megváltoztatása vagy átkapcsolása a megadott állapotra.
@@ -147,13 +147,13 @@ commands:
       description:            ON / OFF
   authme.reload:
     description:              Plugin újratöltés
-    detailedDescription:      Újratölti az AuthMeReloaded plugint.
+    detailedDescription:      Újratölti az AuthMeed plugint.
   authme.version:
     description:              Plugin verzió
-    detailedDescription:      Részletes információ az AuthMeReloaded telepített verziójáról, az alkotókról, a közreműködőkről és az engedélyekről.
+    detailedDescription:      Részletes információ az AuthMeed telepített verziójáról, az alkotókról, a közreműködőkről és az engedélyekről.
   authme.converter:
     description:              Parancs konvertáló
-    detailedDescription:      AuthMeReloaded konvertáló parancs.
+    detailedDescription:      AuthMeed konvertáló parancs.
     arg1:
       label:                  munka
       description:            'Konverziós munka: xauth / crazylogin / rakamak / royalauth / vauth / sqliteToSql / mysqlToSqlite / loginsecurity'
@@ -186,7 +186,7 @@ commands:
       description:            A parancs vagy lekérdezés leírása.
   email:
     description:              Hozzáadja az e-mailt vagy megjeleníti a játékos email-jét
-    detailedDescription:      Az AuthMeReloaded e-mail parancs alapja.
+    detailedDescription:      Az AuthMeed e-mail parancs alapja.
   email.show:
     description:              E-mail megjelenítése
     detailedDescription:      Jelenlegi e-mail megjelenítése.
@@ -234,7 +234,7 @@ commands:
       description:            A parancs vagy a lekérdezés, hogy lásd a segítséget.
   login:
     description:              Bejelentkezés parancs
-    detailedDescription:      Az AuthMeReloadedban használt bejelentkezési parancs.
+    detailedDescription:      Az AuthMeedban használt bejelentkezési parancs.
     arg1:
       label:                  jelszó
       description:            Bejelentkezés jelszó
@@ -246,7 +246,7 @@ commands:
       description:            A parancs vagy a lekérdezés, hogy lásd a segítséget.
   logout:
     description:              Kijelentkezés parancs
-    detailedDescription:      Az AuthMeReloaded által használt kijelentkezés parancs.
+    detailedDescription:      Az AuthMeed által használt kijelentkezés parancs.
   logout.help:
     description:              Kijelentkezési segítség
     detailedDescription:      Részletes segítség a /logout parancsról.
@@ -255,7 +255,7 @@ commands:
       description:            A parancs vagy a lekérdezés, hogy lásd a segítséget.
   register:
     description:              Fiók regisztrálása
-    detailedDescription:      Parancs az AuthMeReloaded által használt fiók regisztrálásához.
+    detailedDescription:      Parancs az AuthMeed által használt fiók regisztrálásához.
     arg1:
       label:                  jelszó
       description:            Jelszó
@@ -270,7 +270,7 @@ commands:
       description:            A parancs vagy a lekérdezés, hogy lássuk a segítséget.
   unregister:
     description:              Fiók törlése
-    detailedDescription:      Parancs az AuthMeReloaded által használt regisztrált fiók törléséhez.
+    detailedDescription:      Parancs az AuthMeed által használt regisztrált fiók törléséhez.
     arg1:
       label:                  jelszó
       description:            Jelszó
@@ -282,7 +282,7 @@ commands:
       description:            A parancs vagy a lekérdezés, hogy lássuk a segítséget.
   changepassword:
     description:              Fiók jelszó módosítása
-    detailedDescription:      Parancs az AuthMeReloaded által használt jelszó megváltoztatásához.
+    detailedDescription:      Parancs az AuthMeed által használt jelszó megváltoztatásához.
     arg1:
       label:                  régiJelszó
       description:            Régi jelszó
@@ -327,7 +327,7 @@ commands:
       description:            Kérdés
   captcha:
     description:              Captcha parancs
-    detailedDescription:      Captcha parancs az AuthMeReloaded számára.
+    detailedDescription:      Captcha parancs az AuthMeed számára.
     arg1:
       label:                  captcha
       description:            A captcha
@@ -338,8 +338,8 @@ commands:
       label:                  konzultáció
       description:            A parancs vagy a lekérdezés, hogy lásd a segítséget.
   verification:
-    description:              AuthMeReloaded hitelesítési folyamatának befejezése
-    detailedDescription:      Parancs az AuthMeReloaded hitelesítési folyamatának befejezéséhez.
+    description:              AuthMeed hitelesítési folyamatának befejezése
+    detailedDescription:      Parancs az AuthMeed hitelesítési folyamatának befejezéséhez.
     arg1:
       label:                  kód
       description:            Kód

@@ -73,7 +73,7 @@ final class MySqlMigrater {
      * @param st Statement object to the database
      * @param tableName the table name
      * @param col the column names configuration
-     * @see <a href="https://github.com/AuthMe/AuthMeReloaded/issues/887">
+     * @see <a href="https://github.com/AuthMe/AuthMeed/issues/887">
      *      #887: Migrate lastlogin column from int32 to bigint</a>
      */
     private static void migrateLastLoginColumnFromInt(Statement st, String tableName, Columns col) throws SQLException {

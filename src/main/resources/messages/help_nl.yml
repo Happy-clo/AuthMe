@@ -3,7 +3,7 @@
 # -------------------------------------------------------
 # Lijst van berichten zichtbaar in het help scherm
 common:
-    header: '==========[ AuthMeReloaded HELP ]=========='
+    header: '==========[ AuthMeed HELP ]=========='
     optional: 'Optioneel'
     hasPermission: 'Je hebt rechten'
     noPermission: 'Je hebt geen rechten'
