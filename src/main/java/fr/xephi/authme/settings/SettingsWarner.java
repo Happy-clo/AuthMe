@@ -79,7 +79,7 @@ public class SettingsWarner {
         if (settings.getProperty(SecuritySettings.PASSWORD_HASH).equals(HashAlgorithm.ARGON2)
             && !Argon2.isLibraryLoaded()) {
             logger.warning("WARNING!!! You use Argon2 Hash Algorithm method but we can't find the Argon2 "
-                + "library on your system! See https://github.com/AuthMe/AuthMeed/wiki/Argon2-as-Password-Hash");
+                + "library on your system! See https://github.com/AuthMe/AuthMe/wiki/Argon2-as-Password-Hash");
             authMe.stopOrUnload();
         }
     }

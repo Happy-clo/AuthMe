@@ -4,7 +4,7 @@
 # -------------------------------------------------------
 # List of texts used in the help section
 common:
-    header: '==========[ Assistenza AuthMeed ]=========='
+    header: '==========[ Assistenza AuthMe ]=========='
     optional: 'Opzionale'
     hasPermission: 'Hai il permesso'
     noPermission: 'Non hai il permesso'
@@ -112,7 +112,7 @@ commands:
         detailedDescription: 'Cambia il punto di rigenerazione iniziale dei giocatori alla tua posizione.'
     authme.purge:
         description: 'Elimina i vecchi dati'
-        detailedDescription: 'Elimina i dati di AuthMeed più vecchi dei giorni indicati.'
+        detailedDescription: 'Elimina i dati di AuthMe più vecchi dei giorni indicati.'
         arg1:
             label: 'giorni'
             description: 'Numero di giorni'
@@ -124,7 +124,7 @@ commands:
             description: 'Nome del giocatore o ''*'' per tutti i giocatori'
     authme.purgebannedplayers:
         description: 'Elimina i dati dei giocatori banditi'
-        detailedDescription: 'Elimina tutti i dati di AuthMeed dei giocatori banditi.'
+        detailedDescription: 'Elimina tutti i dati di AuthMe dei giocatori banditi.'
     authme.switchantibot:
         description: 'Cambia lo stato del servizio di AntiBot'
         detailedDescription: 'Cambia lo stato del servizio di AntiBot allo stato indicato.'
@@ -133,13 +133,13 @@ commands:
             description: 'ON / OFF'
     authme.reload:
         description: 'Ricarica il plugin'
-        detailedDescription: 'Ricarica il plugin AuthMeed.'
+        detailedDescription: 'Ricarica il plugin AuthMe.'
     authme.version:
         description: 'Informazioni sulla versione'
-        detailedDescription: 'Mostra informazioni dettagliate riguardo la versione di AuthMeed in uso, gli sviluppatori, i collaboratori e la licenza.'
+        detailedDescription: 'Mostra informazioni dettagliate riguardo la versione di AuthMe in uso, gli sviluppatori, i collaboratori e la licenza.'
     authme.converter:
         description: 'Comando per il convertitore'
-        detailedDescription: 'Comando per il convertitore di AuthMeed.'
+        detailedDescription: 'Comando per il convertitore di AuthMe.'
         arg1:
             label: 'incarico'
             description: 'Incarico di conversione: xauth / crazylogin / rakamak / royalauth / vauth / sqliteToSql / mysqlToSqlite'

@@ -1,5 +1,5 @@
 common:
-  header: ==========[ AuthMeed - Помощ ]==========
+  header: ==========[ AuthMe - Помощ ]==========
   optional: Опция
   hasPermission: Имате права
   noPermission: Нямате права
@@ -20,7 +20,7 @@ section:
 commands:
   authme:
     description: AuthMe op commands
-    detailedDescription: The main AuthMeed command. The root for all admin commands.
+    detailedDescription: The main AuthMe command. The root for all admin commands.
   authme.register:
     description: Регистриране на играч
     detailedDescription: Регистриране на играч с дадена парола.
@@ -132,10 +132,10 @@ commands:
       description: включено/изключено
   authme.reload:
     description: Презареждане на плъгина.
-    detailedDescription: Презарежда плъгина AuthMeed.
+    detailedDescription: Презарежда плъгина AuthMe.
   authme.version:
     description: Информация за версията
-    detailedDescription: Показва подробна информация за версията на AuthMeed,
+    detailedDescription: Показва подробна информация за версията на AuthMe,
       неговите разработчици, помощници и лиценз.
   authme.converter:
     description: Преобразувател
@@ -170,7 +170,7 @@ commands:
       description: команда, за която е необходимо да се покаже помощ.
   email:
     description: Добавя имейл или възстановява парола. 
-    detailedDescription: Основната команда на AuthMeed свързана с имейлите.
+    detailedDescription: Основната команда на AuthMe свързана с имейлите.
   email.show:
     description: Показва Имейл
     detailedDescription: Показва текущият Ви имейл.

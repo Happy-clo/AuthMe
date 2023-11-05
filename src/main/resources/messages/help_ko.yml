@@ -3,7 +3,7 @@
 # -------------------------------------------------------
 # List of texts used in the help section
 common:
-    header: '==========[ AuthMeed 도움말 ]=========='
+    header: '==========[ AuthMe 도움말 ]=========='
     optional: '선택'
     hasPermission: '권한이 있습니다'
     noPermission: '권한이 없습니다'

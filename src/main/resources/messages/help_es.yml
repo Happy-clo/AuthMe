@@ -3,7 +3,7 @@
 # -------------------------------------------------------
 # Lista de textos usados en la sección de ayuda.
 common:
-  header:                     ======[ AYUDA de AuthMeed ]======
+  header:                     ======[ AYUDA de AuthMe ]======
   optional:                   Opcional
   hasPermission:              Tienes permiso
   noPermission:               No tienes permiso
@@ -24,7 +24,7 @@ section:
 commands:
   authme:
     description:              AuthMe comandos de OPerador
-    detailedDescription:      El comando principal de AuthMeed. La raíz de todos los comandos de administración.
+    detailedDescription:      El comando principal de AuthMe. La raíz de todos los comandos de administración.
   authme.register:
     description:              Registrar un jugador
     detailedDescription:      Registra un jugador específico con una contraseña específica.
@@ -102,7 +102,7 @@ commands:
     detailedDescription:      Cambia la primera zona de aparición del jugador por tu posición actual.
   authme.purge:
     description:              Purgar(Limpiar) datos antiguos
-    detailedDescription:      Purgar o Limpiar datos de AuthMeed anteriores a el número días especificados en la configuración.
+    detailedDescription:      Purgar o Limpiar datos de AuthMe anteriores a el número días especificados en la configuración.
     arg1:
       label:                  días
       description:            Número de días
@@ -126,7 +126,7 @@ commands:
       description:            Nombre del jugador o escribe '*' para seleccionar todos los jugadores
   authme.purgebannedplayers:
     description:              Purgar datos de jugadores baneados
-    detailedDescription:      Purgar todos los datos de AuthMeed de los jugadores baneados.
+    detailedDescription:      Purgar todos los datos de AuthMe de los jugadores baneados.
   authme.switchantibot:
     description:              Cambiar el modo AntiBot
     detailedDescription:      Cambiar o alternar el modo AntiBot al estado especificado.
@@ -135,13 +135,13 @@ commands:
       description:            ON / OFF
   authme.reload:
     description:              Recarga el plugin
-    detailedDescription:      Recarga el plugin AuthMeed.
+    detailedDescription:      Recarga el plugin AuthMe.
   authme.version:
     description:              Información de versión
-    detailedDescription:      Muestra información detallada sobre la versión instalada de AuthMeed, los creadores, contribuyentes, y la licencia.
+    detailedDescription:      Muestra información detallada sobre la versión instalada de AuthMe, los creadores, contribuyentes, y la licencia.
   authme.converter:
     description:              Comando conversor
-    detailedDescription:      Comando conversor de AuthMeed.
+    detailedDescription:      Comando conversor de AuthMe.
     arg1:
       label:                  trabajo
       description:            'Trabajo de conversión: xauth / crazylogin / rakamak / royalauth / vauth / sqliteToSql / mysqlToSqlite / loginsecurity'
@@ -171,7 +171,7 @@ commands:
       description:            El comando o la consulta para ver su description.
   email:
     description:              Añade el correo electrónico o recupera la contraseña
-    detailedDescription:      La base del comando de correo electrónico de AuthMeed.
+    detailedDescription:      La base del comando de correo electrónico de AuthMe.
   email.show:
     description:              Mostrar correo electrónico
     detailedDescription:      Muestra you correo electrónico actual.
@@ -219,7 +219,7 @@ commands:
       description:            El comando o consulta para ver la ayuda de este.
   login:
     description:              Comando de inicio de sesión
-    detailedDescription:      Comando para iniciar sesión utilizado en AuthMeed.
+    detailedDescription:      Comando para iniciar sesión utilizado en AuthMe.
     arg1:
       label:                  contraseña
       description:            Contraseña de inicio de sesión
@@ -231,7 +231,7 @@ commands:
       description:            El comando o consulta para ver la ayuda de este.
   logout:
     description:              Comando de cierre de sesión
-    detailedDescription:      Comando de cierre de sesión usado por AuthMeed.
+    detailedDescription:      Comando de cierre de sesión usado por AuthMe.
   logout.help:
     description:              Mostrar la ayuda
     detailedDescription:      Mostrar la ayuda detallada del comando /logout.
@@ -240,7 +240,7 @@ commands:
       description:            El comando o consulta para ver la ayuda de este.
   register:
     description:              Registrar una cuenta
-    detailedDescription:      Comando para registrar una cuenta usado por AuthMeed.
+    detailedDescription:      Comando para registrar una cuenta usado por AuthMe.
     arg1:
       label:                  contraseña
       description:            Contraseña
@@ -255,7 +255,7 @@ commands:
       description:            El comando o consulta para ver la ayuda de este.
   unregister:
     description:              Eliminar registro de una cuenta
-    detailedDescription:      Comando para eliminar una cuenta registrada usado por AuthMeed.
+    detailedDescription:      Comando para eliminar una cuenta registrada usado por AuthMe.
     arg1:
       label:                  contraseña
       description:            Contraseña
@@ -267,7 +267,7 @@ commands:
       description:            El comando o consulta para ver la ayuda de este.
   changepassword:
     description:              Cambia la contraseña de una cuenta
-    detailedDescription:      Comando para cambiar tu contraseña usado por AuthMeed.
+    detailedDescription:      Comando para cambiar tu contraseña usado por AuthMe.
     arg1:
       label:                  antiguaContraseña
       description:            Antigua contraseña
@@ -282,7 +282,7 @@ commands:
       description:            El comando o consulta para ver la ayuda de este.
   captcha:
     description:              Comando del Captcha
-    detailedDescription:      Comando del Captcha para AuthMeed.
+    detailedDescription:      Comando del Captcha para AuthMe.
     arg1:
       label:                  captcha
       description:            El Captcha

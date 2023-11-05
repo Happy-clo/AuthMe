@@ -3,7 +3,7 @@
 # -------------------------------------------------------
 # List of texts used in the help section
 common:
-    header: '==========[ AuthMeed 幫助 ]=========='
+    header: '==========[ AuthMe 幫助 ]=========='
     optional: '選填'
     hasPermission: '您有使用此指令的權限'
     noPermission: '您沒有使用此指令的權限'
@@ -122,8 +122,8 @@ commands:
         description: '將新玩家的重生點設為您現在的位置。'
         detailedDescription: '將新玩家的重生點設為您現在的位置。'
     authme.purge:
-        description: '刪除超過指定天數的 AuthMeed 資料。'
-        detailedDescription: '刪除超過指定天數的 AuthMeed 資料。'
+        description: '刪除超過指定天數的 AuthMe 資料。'
+        detailedDescription: '刪除超過指定天數的 AuthMe 資料。'
         arg1:
             label: '天'
             description: '天數'
@@ -155,14 +155,14 @@ commands:
             label: '模式'
             description: '模式'
     authme.reload:
-        description: '重新載入 AuthMeed。'
-        detailedDescription: '重新載入 AuthMeed。'
+        description: '重新載入 AuthMe。'
+        detailedDescription: '重新載入 AuthMe。'
     authme.version:
-        description: '顯示 AuthMeed 的詳細資訊。'
-        detailedDescription: '顯示 AuthMeed 的詳細資訊。例如版本、開發者、貢獻者、及授權。'
+        description: '顯示 AuthMe 的詳細資訊。'
+        detailedDescription: '顯示 AuthMe 的詳細資訊。例如版本、開發者、貢獻者、及授權。'
     authme.converter:
-        description: 'AuthMeed 的轉換器指令。'
-        detailedDescription: 'AuthMeed 的轉換器指令。'
+        description: 'AuthMe 的轉換器指令。'
+        detailedDescription: 'AuthMe 的轉換器指令。'
         arg1:
             label: '工作'
             description: '工作'
@@ -324,8 +324,8 @@ commands:
             label: '要查詢的指令'
             description: '要查詢的指令'
     captcha:
-        description: 'AuthMeed 的 Captcha 指令。'
-        detailedDescription: 'AuthMeed 的 Captcha 指令。'
+        description: 'AuthMe 的 Captcha 指令。'
+        detailedDescription: 'AuthMe 的 Captcha 指令。'
         arg1:
             label: 'Captcha 碼'
             description: 'Captcha 碼'

@@ -3,7 +3,7 @@
 # -------------------------------------------------------
 # List of texts used in the help section
 common:
-    header: '==========[ Помощь по AuthMeed ]=========='
+    header: '==========[ Помощь по AuthMe ]=========='
     optional: 'необязательно'
     hasPermission: 'есть'
     noPermission: 'нет'
@@ -132,10 +132,10 @@ commands:
             description: 'включить/выключить'
     authme.reload:
         description: 'Перезагрузка плагина'
-        detailedDescription: 'Перезагружает плагин AuthMeed.'
+        detailedDescription: 'Перезагружает плагин AuthMe.'
     authme.version:
         description: 'Информация о версии'
-        detailedDescription: 'Показывает подробную информацию об установленной версии AuthMeed, его разработчиках, помощниках, а также о лицензии плагина.'
+        detailedDescription: 'Показывает подробную информацию об установленной версии AuthMe, его разработчиках, помощниках, а также о лицензии плагина.'
     authme.converter:
         description: 'Преобразователь'
         detailedDescription: 'Преобразовывает базу данных.'

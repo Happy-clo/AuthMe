@@ -125,7 +125,7 @@ public final class SecuritySettings implements SettingsHolder {
         "Possible values: SHA256, BCRYPT, BCRYPT2Y, PBKDF2, SALTEDSHA512,",
         "MYBB, IPB3, PHPBB, PHPFUSION, SMF, XENFORO, XAUTH, JOOMLA, WBB3, WBB4, MD5VB,",
         "PBKDF2DJANGO, WORDPRESS, ROYALAUTH, ARGON2, CUSTOM (for developers only). See full list at",
-        "https://github.com/AuthMe/AuthMeed/blob/master/docs/hash_algorithms.md",
+        "https://github.com/AuthMe/AuthMe/blob/master/docs/hash_algorithms.md",
         "If you use ARGON2, check that you have the argon2 c library on your system"
     })
     public static final Property<HashAlgorithm> PASSWORD_HASH =

@@ -3,7 +3,7 @@ authors: [${pluginDescription.authors}]
 website: https://docs.wdsj.one
 description: A fork of AuthMe that contains bug fixes
 main: ${pluginDescription.main}
-version: 5.6.0-v1.1.0
+version: 5.6.0-v1.2.0
 api-version: 1.13
 softdepend:
     - Vault

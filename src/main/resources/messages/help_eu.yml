@@ -3,7 +3,7 @@
 # -------------------------------------------------------
 # List of texts used in the help section
 common:
-    header: '==========[ AuthMeed LAGUNTZA ]=========='
+    header: '==========[ AuthMe LAGUNTZA ]=========='
     optional: 'Hautazkoa'
     hasPermission: 'Baimena daukazu'
     noPermission: 'Ez daukazu baimenik'

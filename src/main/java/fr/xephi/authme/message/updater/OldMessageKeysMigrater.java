@@ -12,7 +12,7 @@ import static com.google.common.collect.ImmutableMap.of;
 /**
  * Migrates message files from the old keys (before 5.5) to the new ones.
  *
- * @see <a href="https://github.com/AuthMe/AuthMeed/issues/1467">Issue #1467</a>
+ * @see <a href="https://github.com/AuthMe/AuthMe/issues/1467">Issue #1467</a>
  */
 final class OldMessageKeysMigrater {
 

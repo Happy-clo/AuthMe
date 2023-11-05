@@ -4,7 +4,7 @@
 # -------------------------------------------------------
 # Lista de textos usados na seção de ajuda:
 common:
-    header: '==========[ Ajuda AuthMeed ]=========='
+    header: '==========[ Ajuda AuthMe ]=========='
     optional: 'Opcional'
     hasPermission: 'Você tem permissão'
     noPermission: 'Sem permissão'

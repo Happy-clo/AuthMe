@@ -70,14 +70,14 @@ import static fr.xephi.authme.util.Utils.isClassLoaded;
 public class AuthMe extends JavaPlugin {
 
     // Constants
-    private static final String PLUGIN_NAME = "AuthMeed";
+    private static final String PLUGIN_NAME = "AuthMe";
     private static final String LOG_FILENAME = "authme.log";
     private static final int CLEANUP_INTERVAL = 5 * TICKS_PER_MINUTE;
 
     // Version and build number values
     private static String pluginVersion = "5.6.0";
     private static final String pluginBuild = "v";
-    private static String pluginBuildNumber = "1.1.0";
+    private static String pluginBuildNumber = "1.2.0";
     protected final Boolean SHAEnabled = false;
     // Private instances
     private EmailService emailService;

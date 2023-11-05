@@ -29,7 +29,7 @@ public final class PluginSettings implements SettingsHolder {
 
     @Comment({
         "Message language, available languages:",
-        "https://github.com/AuthMe/AuthMeed/blob/master/docs/translations.md"
+        "https://github.com/AuthMe/AuthMe/blob/master/docs/translations.md"
     })
     public static final Property<String> MESSAGES_LANGUAGE =
         newProperty("settings.messagesLanguage", "zhcn");

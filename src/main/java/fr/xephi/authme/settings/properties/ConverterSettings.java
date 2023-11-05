@@ -51,6 +51,6 @@ public final class ConverterSettings implements SettingsHolder {
     @Override
     public void registerComments(CommentsConfiguration conf) {
         conf.setComment("Converter",
-            "Converter settings: see https://github.com/AuthMe/AuthMeed/wiki/Converters");
+            "Converter settings: see https://github.com/AuthMe/AuthMe/wiki/Converters");
     }
 }
